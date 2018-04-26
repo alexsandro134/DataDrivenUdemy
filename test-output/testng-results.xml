@@ -1,25 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
+    <line>
+      <![CDATA[LoginTest successful]]>
+    </line>
+    <line>
+      <![CDATA[<a target="_blank" href="E:\Wallpapers\wallhaven-16687.jpg">Screenshot</a>]]>
+    </line>
+    <line>
+      <![CDATA[<br>]]>
+    </line>
+    <line>
+      <![CDATA[<a target="_blank" href="E:\Wallpapers\wallhaven-16687.jpg"><img src="E:\Wallpapers\wallhaven-16687.jpg" height=200 width=200></img></a>]]>
+    </line>
   </reporter-output>
-  <suite name="Data Driven Basic" duration-ms="4755" started-at="2018-04-26T11:03:51Z" finished-at="2018-04-26T11:03:55Z">
+  <suite name="Data Driven Basic" duration-ms="1250" started-at="2018-04-26T15:16:21Z" finished-at="2018-04-26T15:16:22Z">
     <groups>
     </groups>
-    <test name="LoginTest" duration-ms="4755" started-at="2018-04-26T11:03:51Z" finished-at="2018-04-26T11:03:55Z">
-      <class name="testcases.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.LoginTest@23e028a9]" name="setUp" is-config="true" duration-ms="29539" started-at="2018-04-26T11:03:21Z" finished-at="2018-04-26T11:03:51Z">
+    <test name="Add manager test" duration-ms="352" started-at="2018-04-26T15:16:21Z" finished-at="2018-04-26T15:16:21Z">
+      <class name="testcases.BankManagerLoginTest">
+        <test-method status="PASS" signature="loginAsBankManager()[pri:0, instance:testcases.BankManagerLoginTest@2aceadd4]" name="loginAsBankManager" duration-ms="320" started-at="2018-04-26T15:16:21Z" finished-at="2018-04-26T15:16:21Z">
+          <reporter-output>
+            <line>
+              <![CDATA[LoginTest successful]]>
+            </line>
+            <line>
+              <![CDATA[<a target="_blank" href="E:\Wallpapers\wallhaven-16687.jpg">Screenshot</a>]]>
+            </line>
+            <line>
+              <![CDATA[<br>]]>
+            </line>
+            <line>
+              <![CDATA[<a target="_blank" href="E:\Wallpapers\wallhaven-16687.jpg"><img src="E:\Wallpapers\wallhaven-16687.jpg" height=200 width=200></img></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginAsBankManager -->
+      </class> <!-- testcases.BankManagerLoginTest -->
+    </test> <!-- Add manager test -->
+    <test name="Add customer test" duration-ms="870" started-at="2018-04-26T15:16:21Z" finished-at="2018-04-26T15:16:22Z">
+      <class name="testcases.AddCustomerTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.AddCustomerTest@6f4a47c7]" name="setUp" is-config="true" duration-ms="6090" started-at="2018-04-26T15:16:15Z" finished-at="2018-04-26T15:16:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginAsBankManager()[pri:0, instance:testcases.LoginTest@23e028a9]" name="loginAsBankManager" duration-ms="4740" started-at="2018-04-26T11:03:51Z" finished-at="2018-04-26T11:03:55Z">
+        <test-method status="PASS" signature="addCustomer(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testcases.AddCustomerTest@6f4a47c7]" name="addCustomer" duration-ms="566" started-at="2018-04-26T15:16:21Z" data-provider="getData" finished-at="2018-04-26T15:16:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Tai]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Le]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test1000]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Customer added successfully]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAsBankManager -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.LoginTest@23e028a9]" name="tearDown" is-config="true" duration-ms="679" started-at="2018-04-26T11:03:56Z" finished-at="2018-04-26T11:03:56Z">
+        </test-method> <!-- addCustomer -->
+        <test-method status="PASS" signature="addCustomer(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testcases.AddCustomerTest@6f4a47c7]" name="addCustomer" duration-ms="288" started-at="2018-04-26T15:16:22Z" data-provider="getData" finished-at="2018-04-26T15:16:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Giang]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Nguyen]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Abcd20]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Customer added successfully]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCustomer -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.AddCustomerTest@6f4a47c7]" name="tearDown" is-config="true" duration-ms="679" started-at="2018-04-26T15:16:22Z" finished-at="2018-04-26T15:16:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testcases.LoginTest -->
-    </test> <!-- LoginTest -->
+      </class> <!-- testcases.AddCustomerTest -->
+    </test> <!-- Add customer test -->
   </suite> <!-- Data Driven Basic -->
 </testng-results>
