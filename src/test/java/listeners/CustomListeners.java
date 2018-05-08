@@ -3,6 +3,7 @@ package listeners;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 
 public class CustomListeners implements ITestListener{
 
@@ -22,7 +23,11 @@ public class CustomListeners implements ITestListener{
 	}
 
 	public void onTestFailure(ITestResult arg0) {
-		// TODO Auto-generated method stub
+		System.setProperty("org.uncommons.reportng.escape-output","false");
+		Reporter.log("Capturing screenshot");
+		Reporter.log("<a target=\"_blank\" href=\"E:\\Wallpapers\\wallhaven-16687.jpg\">Screenshot</a>");
+		Reporter.log("<br>");
+		Reporter.log("<a target=\"_blank\" href=\"E:\\Wallpapers\\wallhaven-16687.jpg\"><img src=\"E:\\Wallpapers\\wallhaven-16687.jpg\" height=200 width=200></img></a>");
 		
 	}
 
