@@ -1,11 +1,18 @@
 package listeners;
 
+import java.io.IOException;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-public class CustomListeners implements ITestListener{
+import com.relevantcodes.extentreports.LogStatus;
+
+import base.TestBase;
+import utilities.TestUtil;
+
+public class CustomListeners extends TestBase implements ITestListener{
 
 	public void onFinish(ITestContext arg0) {
 		// TODO Auto-generated method stub
@@ -24,10 +31,20 @@ public class CustomListeners implements ITestListener{
 
 	public void onTestFailure(ITestResult arg0) {
 		System.setProperty("org.uncommons.reportng.escape-output","false");
-		Reporter.log("Capturing screenshot");
-		Reporter.log("<a target=\"_blank\" href=\"E:\\Wallpapers\\wallhaven-16687.jpg\">Screenshot</a>");
+		try {
+			TestUtil.captureScreenshot();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		test.log(LogStatus.FAIL, arg0.getName().toUpperCase()+" FAILED with exception : " +arg0.getThrowable());
+		test.log(LogStatus.FAIL, test.addScreenCapture(TestUtil.screenshotName));
+		
+		Reporter.log("Click to see screenshot");
+		Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+">Screenshot</a>");
 		Reporter.log("<br>");
-		Reporter.log("<a target=\"_blank\" href=\"E:\\Wallpapers\\wallhaven-16687.jpg\"><img src=\"E:\\Wallpapers\\wallhaven-16687.jpg\" height=200 width=200></img></a>");
+		Reporter.log("<br>");
+		Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+"><img src="+TestUtil.screenshotName+" height=200 width=200></img></a>");
 		
 	}
 
@@ -37,13 +54,14 @@ public class CustomListeners implements ITestListener{
 	}
 
 	public void onTestStart(ITestResult arg0) {
-		// TODO Auto-generated method stub
 		
+		test = rep.startTest(arg0.getName().toUpperCase());
 	}
 
 	public void onTestSuccess(ITestResult arg0) {
-		// TODO Auto-generated method stub
-		
+		test.log(LogStatus.PASS, arg0.getName().toUpperCase()+" PASS");
+		rep.endTest(test);
+		rep.flush();
 	}
 
 }

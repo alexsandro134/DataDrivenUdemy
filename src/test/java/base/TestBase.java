@@ -17,8 +17,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.ExcelReader;
+import utilities.ExtentManager;
 
 
 public class TestBase {
@@ -36,6 +40,9 @@ public class TestBase {
 	public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir")
 			+ "\\src\\test\\resources\\excel\\testdata.xlsx");
 	public static WebDriverWait wait;
+	public ExtentReports rep = ExtentManager.getInstance();
+	public static ExtentTest test;
+	
 	
 	@BeforeSuite
 	public void setUp() {
@@ -43,8 +50,7 @@ public class TestBase {
 
 			try {
 				fis = new FileInputStream(
-						System.getProperty("user.dir")
-								+ "\\src\\test\\resources\\properties\\Config.properties");
+						System.getProperty("user.dir")+ "\\src\\test\\resources\\properties\\Config.properties");
 			} catch (FileNotFoundException e1) {
 				e1.printStackTrace();
 			}

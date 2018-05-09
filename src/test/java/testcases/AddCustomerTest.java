@@ -23,6 +23,8 @@ public class AddCustomerTest extends TestBase{
 		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 		Assert.assertTrue(alert.getText().contains(alerttext));
 		alert.accept();
+		
+		Assert.fail("Fail");
 	}
 
 	@DataProvider
